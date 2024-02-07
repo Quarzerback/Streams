@@ -3,6 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +24,10 @@ public class Main {
                 .reduce(0, Integer::sum);
         System.out.println("Sum of List: " + numbersSum);
 
-        numbers.forEach(number -> System.out.println(number));
+        numbersEvenDoubled.forEach(number -> System.out.println(number));
+
+        List<Integer> numbersInNewList = numbersEvenDoubled.stream().collect(Collectors.toList());
+        System.out.println(numbersInNewList);
 
 
 
